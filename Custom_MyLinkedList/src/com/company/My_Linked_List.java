@@ -62,8 +62,8 @@ public class My_Linked_List<T> implements MyList<T>{
             right.prev = null;
             head= right;
         } else if (tail == toRemove) {
-            //tail = left;
             left.next = null;
+            tail = left;
         } else {
             right.prev = left;
             left.next = right;
