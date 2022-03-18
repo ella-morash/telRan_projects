@@ -1,19 +1,19 @@
 package com.company;
 
-import java.util.HashMap;
+import com.company.commands.Command;
+import com.company.commands.GrayScale;
+import com.company.loader.Loader;
+import com.company.service.Editor;
+
+import java.io.IOException;
+import java.util.Set;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 	// write your code here
         MyFileReader reader = new MyFileReader();
-        reader.readFile();
-        HashMap<String,String> map = reader.storeFile();
-        map = reader.storeFile();
-
-        System.out.println(map);
-
-        MyImageDownloader downloader = new MyImageDownloader(reader);
-        downloader.downloadImage();
+        Editor edit = new Editor(reader);
+        edit.editImages();
     }
 }
