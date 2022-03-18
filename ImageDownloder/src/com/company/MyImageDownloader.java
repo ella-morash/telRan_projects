@@ -1,7 +1,10 @@
 package com.company;
 
 import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.color.ColorSpace;
+import java.awt.image.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -28,6 +31,9 @@ public class MyImageDownloader {
 
                 switch (count) {
                     case 1:
+                        ColorSpace cs = ColorSpace.getInstance(ColorSpace.CS_GRAY);
+                        ColorConvertOp op = new ColorConvertOp(cs, null);
+                        image = op.filter(image, null);
                         ImageIO.write(image, "jpg", new File("C:/telRan_projects/ImageDownloder/picture1.jpg"));
                         break;
                     case 2:
