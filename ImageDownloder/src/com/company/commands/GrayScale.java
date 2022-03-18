@@ -6,7 +6,7 @@ import java.awt.image.ColorConvertOp;
 
 public class GrayScale extends Command {
 
-    public String command;
+    public static final String command = "GRAYSCALE";
 
     @Override
     public BufferedImage execute(BufferedImage plain) {
@@ -16,18 +16,8 @@ public class GrayScale extends Command {
         return edited;
     }
 
-    public GrayScale(String command) {
-        this.command = command;
-    }
-
     public String getCommand() {
         return command;
     }
 
-    @Override
-    public String toString() {
-        return "GrayScale{" +
-                "command='" + command + '\'' +
-                "} " + super.toString();
-    }
 }

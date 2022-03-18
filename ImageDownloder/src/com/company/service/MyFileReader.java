@@ -1,4 +1,4 @@
-package com.company;
+package com.company.service;
 
 
 import java.io.BufferedReader;
@@ -6,15 +6,12 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
 
 public class MyFileReader {
 
     private final String FILE_PATH = "my_file.csv";
     private final HashMap<String,String> map;
-    
+
     public MyFileReader() {
         this.map = readFile();
     }
@@ -27,17 +24,10 @@ public class MyFileReader {
         String line = "";
         try {
             BufferedReader br = new BufferedReader(new FileReader(FILE_PATH));
-
             while ((line = br.readLine()) != null) {
-
                 String[] urls = line.split(",");
-
-                        System.out.println("Image " + urls[0] + " Command  " + urls[1]);
-
+                System.out.println("Image " + urls[0] + " Command  " + urls[1]);
             }
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -59,13 +49,5 @@ public class MyFileReader {
             e.printStackTrace();
         }
         return map;
-    }
-    private HashSet<String> getCommands(){
-        Set<String> commands = new HashSet<>();
-        for (Map.Entry pair : readFile().entrySet()){
-            commands.add(pair.getValue().toString());
-        }
-        return (HashSet<String>) commands;
-
     }
 }

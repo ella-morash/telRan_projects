@@ -1,13 +1,10 @@
 package com.company.service;
 
-import com.company.MyFileReader;
 import com.company.commands.Command;
 import com.company.loader.Loader;
 
-import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Map;
 
