@@ -6,5 +6,6 @@ public class Main {
 	// write your code here
         MyFileReader reader = new MyFileReader();
         reader.readFile();
+        System.out.println(reader.storeFile());
     }
 }
