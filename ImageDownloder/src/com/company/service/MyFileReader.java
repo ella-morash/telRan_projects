@@ -1,8 +1,6 @@
 package com.company.service;
 
 
-import com.company.commands.Preview;
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -42,7 +40,7 @@ public class MyFileReader {
             BufferedReader br = new BufferedReader(new FileReader(FILE_PATH));
             while ((line = br.readLine()) != null) {
                 String[] urls = line.split(",");
-                map.put(urls[0], urls[1]);
+                map.put(urls[0], urls[1].trim());
             }
 
         } catch (FileNotFoundException e) {

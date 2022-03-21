@@ -6,7 +6,7 @@ import java.awt.image.BufferedImage;
 
 public  class ThumbNail extends Command {
 
-    public static final String command = "THUMBNAIL";
+    private final String command = "THUMBNAIL";
 
     @Override
     public BufferedImage execute(BufferedImage plain) {
