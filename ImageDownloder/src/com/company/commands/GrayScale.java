@@ -1,5 +1,6 @@
 package com.company.commands;
 
+import javax.swing.*;
 import java.awt.color.ColorSpace;
 import java.awt.image.BufferedImage;
 import java.awt.image.ColorConvertOp;
@@ -17,6 +18,7 @@ public class GrayScale extends Command {
     }
 
     public String getCommand() {
+
         return command;
     }
 
