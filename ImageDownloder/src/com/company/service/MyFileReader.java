@@ -13,20 +13,24 @@ public class MyFileReader {
     private final HashMap<String,String> map;
 
     public MyFileReader() {
+
         this.map = readFile();
     }
 
     public HashMap<String, String> getMap() {
+
         return map;
     }
 
     public void printFile() {
         String line = "";
+        int count = 1;
         try {
             BufferedReader br = new BufferedReader(new FileReader(FILE_PATH));
             while ((line = br.readLine()) != null) {
                 String[] urls = line.split(",");
-                System.out.println("Image " + urls[0] + " Command  " + urls[1]);
+                System.out.println("Image " + count + " " + urls[0] + " Command  " + count + " " + urls[1]);
+                count++;
             }
         } catch (IOException e) {
             e.printStackTrace();
