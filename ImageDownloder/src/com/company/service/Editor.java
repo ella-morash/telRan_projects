@@ -10,15 +10,15 @@ import java.util.Map;
 
 
 public class Editor {
-    private MyFileReader reader;
 
-    public Editor(MyFileReader reader) {
+    private FileWriter writer;
 
-        this.reader = reader;
+    public Editor(FileWriter writer) {
+        this.writer = writer;
     }
 
     public void editImages() throws IOException {
-        var map = reader.getMap();
+        var map = writer.getMap();
         int count = 0;
 
         outerFor:

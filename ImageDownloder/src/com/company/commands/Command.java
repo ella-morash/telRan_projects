@@ -1,6 +1,5 @@
 package com.company.commands;
 
-import javax.swing.*;
 import java.awt.image.BufferedImage;
 
 public abstract class Command {
