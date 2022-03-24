@@ -13,9 +13,10 @@ public class ImageApp {
 
         MyFileReader reader = new MyFileReader();
         PrintFile printing = new PrintFile(reader);
-        printing.printFile();
+        //printing.printFile();
 
         FileWriter writer = new FileWriter(reader);
+       // System.out.println(writer.getMap());
 
         Editor edit = new Editor(writer);
         edit.editImages();

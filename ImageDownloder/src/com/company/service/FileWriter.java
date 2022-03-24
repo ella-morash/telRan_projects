@@ -24,6 +24,7 @@ public class FileWriter {
             String[] urls = l.split(",");
             map.put(urls[0], urls[1].trim());
         });
+        //System.out.println(map);
         return map;
     }
 }

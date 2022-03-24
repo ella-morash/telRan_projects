@@ -14,12 +14,14 @@ public class Editor {
     private FileWriter writer;
 
     public Editor(FileWriter writer) {
+
         this.writer = writer;
     }
 
     public void editImages() throws IOException {
         var map = writer.getMap();
         int count = 0;
+        //System.out.println(map);
 
         outerFor:
         for (Map.Entry pair : map.entrySet()) {

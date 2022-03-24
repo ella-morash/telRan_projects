@@ -12,11 +12,7 @@ public class PrintFile {
     }
 
     public void printFile() {
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(reader.getFILE_PATH()));
-            br.lines().forEach(l-> System.out.println(l));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        BufferedReader br = reader.getBr();
+        br.lines().forEach(l-> System.out.println(l));
     }
 }
