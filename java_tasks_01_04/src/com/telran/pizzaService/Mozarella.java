@@ -12,15 +12,4 @@ public class Mozarella extends Pizza{
 
     }
 
-    @Override
-    public void backing() {
-        System.out.println(getName() + " is being backed");
-
-    }
-
-    @Override
-    public void wrapping() {
-        System.out.println(getName() + " is getting ready to send");
-
-    }
 }

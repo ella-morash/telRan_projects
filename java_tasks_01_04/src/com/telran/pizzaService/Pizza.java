@@ -17,12 +17,21 @@ public abstract class Pizza {
                 "name='" + name + '\'' +
                 '}';
     }
+    public void orderPizza() {
+        preparing();
+        backing();
+        wrapping();
+    }
 
-    public abstract void preparing();
+    protected abstract void preparing();
 
-    public abstract void backing();
+    private void backing() {
+        System.out.println(getName()+" is being backed");
+    };
 
-    public abstract void wrapping();
+    private void wrapping() {
+        System.out.println(getName() + " is being wrapped");
+    };
 
 
 

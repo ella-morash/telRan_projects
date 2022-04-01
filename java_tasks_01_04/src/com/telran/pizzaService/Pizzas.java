@@ -1,7 +1,7 @@
 package com.telran.pizzaService;
 
 public enum Pizzas {
-    Mozarella,
-    Gawaii,
-    Salami
+    MOZARELLA,
+    GAWAII,
+    SALAMI
 }
