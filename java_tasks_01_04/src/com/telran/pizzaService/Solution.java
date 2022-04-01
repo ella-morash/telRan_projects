@@ -8,7 +8,8 @@ public class Solution {
         Scanner order = new Scanner(System.in);
         System.out.println("What kind of pizza would you like to order? \n Enter: \n Mozarella \n Gawaii \n Salami " );
         String answer = order.next();
-        Pizza newOrder = PizzaFactory.order(answer);
+        Pizzas pizzaType = Pizzas.valueOf(answer);
+        Pizza newOrder = PizzaFactory.order(pizzaType);
         newOrder.preparing();
         newOrder.backing();
         newOrder.wrapping();

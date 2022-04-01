@@ -1,18 +1,15 @@
 package com.telran.pizzaService;
 
 public abstract class Pizza {
-    private String name;
+    private Enum name;
 
-
-    public Pizza(String name) {
+    public Pizza(Enum name) {
         this.name = name;
-
     }
 
-    public String getName() {
+    public Enum getName() {
         return name;
     }
-
 
     @Override
     public String toString() {

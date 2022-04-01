@@ -2,7 +2,7 @@ package com.telran.pizzaService;
 
 public class Mozarella extends Pizza{
 
-    public Mozarella(String name) {
+    public Mozarella(Enum name) {
         super(name);
     }
 

@@ -2,7 +2,7 @@ package com.telran.pizzaService;
 
 public class Salami extends Pizza{
 
-    public Salami(String name) {
+    public Salami(Enum name) {
         super(name);
     }
 
