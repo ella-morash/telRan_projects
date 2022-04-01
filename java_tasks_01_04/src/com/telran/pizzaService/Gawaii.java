@@ -2,7 +2,7 @@ package com.telran.pizzaService;
 
 public class Gawaii extends Pizza{
 
-    public Gawaii(Enum name) {
+    public Gawaii(String name) {
         super(name);
     }
 
