@@ -10,8 +10,8 @@ import java.util.List;
 
 public class CatalogParser {
    private Berlin24Searcher searcher;
-    private String message;
-    private List<String> catalog;
+   private String message;
+   private List<String> catalog;
 
 
     public CatalogParser(Berlin24Searcher searcher, String message) {
@@ -32,8 +32,8 @@ public class CatalogParser {
         this.catalog = new ArrayList<>();
 
         try {
-
-            Document doc = Jsoup.connect(searcher.getLinksByLabels().get(message)).userAgent("Mozilla").get();
+            System.out.println(this.searcher.getLinksByLabels());
+            Document doc = Jsoup.connect(this.searcher.getLinksByLabels().get(message)).userAgent("Mozilla").get();
             // next pages if exist
             Elements next = doc.body().getElementsByClass("pagination");
 

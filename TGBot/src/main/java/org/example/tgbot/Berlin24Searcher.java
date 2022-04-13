@@ -5,6 +5,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -16,7 +17,6 @@ public class Berlin24Searcher {
         this.doc = getDoc();
 
     }
-
 
     public HashMap<String, String> getLinksByLabels() {
         return linksByLabels;
@@ -57,6 +57,22 @@ public class Berlin24Searcher {
 
     }
 
+    public static List<String> getLabels() {
+        List<String> labels = new ArrayList<>();
+        Document doc = null;
+        try {
+            doc = Jsoup.connect("https://berlin24.ru").userAgent("Mozilla").get();
+            Elements web = doc.body().getElementsByClass("block-accent block-menu col-menu");
+            labels = web.select("a").eachText();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return labels;
+        }
+
+    }
 
 
-}
+
+
+
