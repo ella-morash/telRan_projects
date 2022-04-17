@@ -36,4 +36,11 @@ public class TelegramKeyBoard {
                         new KeyboardButton("Новый поиск")
                 });
     }
+
+    public static ReplyKeyboardMarkup createAnotherBottom() {
+        return new ReplyKeyboardMarkup(
+                new KeyboardButton[]{
+                        new KeyboardButton("Ещё")
+                });
+    }
 }
