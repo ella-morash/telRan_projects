@@ -30,14 +30,14 @@ public class TelegramKeyBoard {
                 .selective(true);
     }
 
-    public static ReplyKeyboardMarkup createBottom() {
+    public static ReplyKeyboardMarkup createBotton() {
         return new ReplyKeyboardMarkup(
                 new KeyboardButton[]{
                         new KeyboardButton("Новый поиск")
                 });
     }
 
-    public static ReplyKeyboardMarkup createAnotherBottom() {
+    public static ReplyKeyboardMarkup createAnotherBotton() {
         return new ReplyKeyboardMarkup(
                 new KeyboardButton[]{
                         new KeyboardButton("Ещё")

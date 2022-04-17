@@ -6,7 +6,7 @@ import com.pengrad.telegrambot.model.Update;
 
 public class BotService {
 
-    private final String TOKEN = "5275496275:AAGNfXr1aZZ6Fpdql0sG6RWWd-0tk_3uRdw";
+    private final String TOKEN = "";
     private final TelegramBot bot = new TelegramBot(TOKEN);
 
     public void initUpdateListener() {
