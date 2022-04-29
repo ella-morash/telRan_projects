@@ -29,7 +29,7 @@ public class Main {
     }
 
     public static int getMaxElement(int[] input) {
-        if (input == null) return 0;
+        if (input == null) throw new IndexOutOfBoundsException();
         int max = input[0];
         boolean isNegative = false;
         for (int i = 0; i < input.length; i++) {
@@ -39,8 +39,6 @@ public class Main {
                 }
             }
             isNegative = true;
-
-
         }
 
         if (isNegative) return -1;

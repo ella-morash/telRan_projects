@@ -26,8 +26,8 @@ class MainTest1 {
     @Test
     void maxElementIfArrayIsEmpty(){
         int[] input =null;
-        int expected = 0;
-        Assertions.assertEquals(expected,Main.getMaxElement(input));
+
+        Assertions.assertThrows(IndexOutOfBoundsException.class,() -> Main.getMaxElement(input));
 
 
     }
