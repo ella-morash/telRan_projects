@@ -32,4 +32,13 @@ class MainTest1 {
 
     }
 
+    @Test
+    void maxElementIfArraysElementIsNegative(){
+        int[] input ={-1,-2,-3,-4};
+        int expected = -1;
+        Assertions.assertEquals(expected,Main.getMaxElement(input));
+
+
+    }
+
 }

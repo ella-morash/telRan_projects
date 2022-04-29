@@ -31,15 +31,20 @@ public class Main {
     public static int getMaxElement(int[] input) {
         if (input == null) return 0;
         int max = input[0];
+        boolean isNegative = false;
         for (int i = 0; i < input.length; i++) {
-            if(input[i]>max) {
-                max = input[i];
+            if (input[i]>0) {
+                if(input[i]>max) {
+                    max = input[i];
+                }
             }
+            isNegative = true;
+
 
         }
 
+        if (isNegative) return -1;
+
         return max;
-
-
     }
 }

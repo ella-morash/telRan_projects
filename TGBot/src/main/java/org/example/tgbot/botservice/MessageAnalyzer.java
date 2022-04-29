@@ -1,12 +1,17 @@
 package org.example.tgbot.botservice;
 
+import com.pengrad.telegrambot.Callback;
 import com.pengrad.telegrambot.TelegramBot;
+import com.pengrad.telegrambot.model.Update;
+import com.pengrad.telegrambot.request.GetUpdates;
 import com.pengrad.telegrambot.request.SendMessage;
+import com.pengrad.telegrambot.response.GetUpdatesResponse;
 import com.pengrad.telegrambot.response.SendResponse;
 import org.example.tgbot.Berlin24Searcher;
 import org.example.tgbot.CatalogParser;
 import org.example.tgbot.utils.TelegramKeyBoard;
 
+import java.io.IOException;
 import java.util.List;
 
 public class MessageAnalyzer {
@@ -36,37 +41,15 @@ public class MessageAnalyzer {
             CatalogParser catalogParser = new CatalogParser(searcher, message);
             catalogParser.createCatalog();
             List<String> catalog = catalogParser.getCatalog();
-            if (catalog.size() <= 10) {
-                catalog.forEach(info -> bot.execute(new SendMessage(chatId, info)));
-            } else {
-                for (int i = 0; i < 10; i++) {
-                    bot.execute(new SendMessage(chatId, catalog.get(i)));
-                }
-                SendResponse execute3 = bot.execute(
-                        new SendMessage(chatId, "Berlin 24").replyMarkup(TelegramKeyBoard.createAnotherBotton()));
-                if (message.equals("Ещё")) {
+
+            catalog.forEach(info-> bot.execute(new SendMessage(chatId, info),BotService.emptyCallback));
 
 
-                    for (int i = 10; i < catalog.size(); i++) {
-                        bot.execute(new SendMessage(chatId, catalog.get(i)));
-
-                    }
-                }
-
-            }
-
-            SendResponse execute4 = bot.execute(
-                    new SendMessage(chatId, "Berlin 24").replyMarkup(TelegramKeyBoard.createBotton())
-            );
-        }
-    }
-
-    public static void getMoreInfo (long chatId,TelegramBot bot,List<String> catalog) {
-        for (int i = 10; i < catalog.size(); i++) {
-            bot.execute(new SendMessage(chatId, catalog.get(i)));
+            SendResponse execute4 = bot.execute(new SendMessage(chatId, "Berlin 24").replyMarkup(TelegramKeyBoard.createBotton()));
 
         }
     }
+
 
 
 }
