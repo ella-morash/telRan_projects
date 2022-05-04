@@ -12,7 +12,9 @@ public class Main {
     }
 
     public static String interactWithCustomer(Scanner sc,Sender sender) {
-        System.out.println("How would you like to send email? \n please type \n DHL \n Email \n Pigeon");
+        System.out.println("How would you like to send email?" + System.lineSeparator() + "please type"
+                + System.lineSeparator() +"DHL" +
+                System.lineSeparator() + "Email"+System.lineSeparator() + "Pigeon");
         String answer = sc.next();
         switch (answer) {
             case "DHL":

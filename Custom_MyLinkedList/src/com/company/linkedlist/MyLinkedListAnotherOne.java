@@ -188,6 +188,59 @@ public class MyLinkedListAnotherOne {
         return sum/count;
     }
 
+    //1.4. заменяет отрицательные элементы списка их абсолютным значением
+
+    void changeToAbs() {
+
+        Node temp = head;
+
+        while (temp!=null) {
+            if (temp.info < 0) {
+                temp.info = Math.abs(temp.info);
+
+            }
+            temp=temp.next;
+        }
+
+    }
+
+    //1.5.подсчитывает в списке количество элементов с некоторым (заранее заданным)
+    // значением информационного поля
+    int countValues(int info) {
+        int count = 0;
+        if (head!=null) {
+
+            Node temp = head;
+
+            while (temp!=null) {
+                if (temp.info==info) {
+                    count++;
+                }
+                temp = temp.next;
+            }
+        }
+        return count;
+    }
+
+    //1.6.подсчитывает в списке количество пар идущих подряд элементов, в которых значение информационного
+    // поля первого элемента превосходит значение информационного поля второго элемента
+    int countPairs() {
+        int count = 0;
+        if (head!=null) {
+
+            Node temp = head;
+
+            while (temp!=null) {
+                if(temp.next==null) break;
+                if (temp.info>temp.next.info) {
+                    count++;
+                }
+
+                temp = temp.next;
+            }
+        }
+        return count;
+    }
 }
 
 

@@ -6,6 +6,7 @@ public class Sender {
     }
 
     public String test(MailDeliveryService mailDeliveryService){
-       return mailDeliveryService.forTest();
+
+        return mailDeliveryService.forTest();
     }
 }
