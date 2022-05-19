@@ -14,6 +14,7 @@ public class POJO {
         return createMap();
     }
 
+
     private Map<String,String> createMap() {
 
         map = new Gson().fromJson(new MyData().createJson(), Map.class);

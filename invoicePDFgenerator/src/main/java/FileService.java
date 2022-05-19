@@ -3,8 +3,9 @@ import java.io.IOException;
 
 public class FileService {
     public static void main(String[] args) throws IOException {
-       FileWriter writer = new FileWriter();
-       writer.generateNewDocxFile();
+
+       PDFGenerator pdfGenerator = new PDFGenerator();
+       pdfGenerator.getPDF();
 
     }
 }

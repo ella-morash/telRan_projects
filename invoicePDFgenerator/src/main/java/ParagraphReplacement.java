@@ -9,9 +9,10 @@ public class ParagraphReplacement implements PlaceHolderReplacer{
 
     @Override
     public void replacePlaceholders(Map<String, String> map, DocxReader docxReader) throws FileNotFoundException {
+        outerForLoop:
         for (Map.Entry<String, String> entry : map.entrySet())
         {
-            for (XWPFParagraph paragraph : docxReader.getXWPFDocument().getParagraphs())
+            for (XWPFParagraph paragraph : docxReader.getDocx().getParagraphs())
             {
                 for (XWPFRun run : paragraph.getRuns())
                 {
@@ -26,6 +27,8 @@ public class ParagraphReplacement implements PlaceHolderReplacer{
                         text = text.replace(entry.getKey(), entry.getValue());
 
                         run.setText(text, 0);
+                        continue outerForLoop;
+
                     }
                 }
             }

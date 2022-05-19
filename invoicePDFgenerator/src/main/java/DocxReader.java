@@ -9,17 +9,22 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 @Getter
+
 public class DocxReader {
     private final String filePath = "src/main/resources/invoice_telran.docx";
+    private XWPFDocument docx;
 
+    public DocxReader() throws FileNotFoundException {
+        docx = getXWPFDocument();
+    }
 
 
     public XWPFDocument getXWPFDocument() throws FileNotFoundException {
         try {
             File file = new File(filePath);
             FileInputStream fis = new FileInputStream(file.getAbsolutePath());
-            XWPFDocument document = new XWPFDocument(fis);
-            return document;
+            docx = new XWPFDocument(fis);
+            return docx;
 //            var p =document.getParagraphs();
 //            p.forEach(par-> System.out.println(par.getRuns()));
 //            var t = document.getTables();

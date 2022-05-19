@@ -8,9 +8,10 @@ public class TableReplacement implements PlaceHolderReplacer{
 
     @Override
     public void replacePlaceholders(Map<String, String> map, DocxReader docxReader) throws FileNotFoundException {
+        outerForLoop:
         for (Map.Entry<String, String> entry : map.entrySet())
         {
-            for (XWPFTable xwpfTable : docxReader.getXWPFDocument().getTables())
+            for (XWPFTable xwpfTable : docxReader.getDocx().getTables())
             {
                 for (XWPFTableRow xwpfTableRow : xwpfTable.getRows())
                 {
@@ -30,6 +31,7 @@ public class TableReplacement implements PlaceHolderReplacer{
                                 {
                                     text = text.replace(entry.getKey(), entry.getValue());
                                     xwpfRun.setText(text, 0);
+                                    continue outerForLoop;
                                 }
                             }
                         }
