@@ -8,8 +8,12 @@
     <artifactId>invoicePDFgenerator</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-
     <dependencies>
+        <dependency>
+            <groupId>de.gerdi-project</groupId>
+            <artifactId>GSON</artifactId>
+            <version>6.0.6</version>
+        </dependency>
 
         <dependency>
             <groupId>org.apache.poi</groupId>
@@ -20,6 +24,12 @@
             <groupId>com.luhuiguo</groupId>
             <artifactId>aspose-pdf</artifactId>
             <version>22.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

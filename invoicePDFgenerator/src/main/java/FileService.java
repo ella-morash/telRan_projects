@@ -1,8 +1,10 @@
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class FileService {
-    public static void main(String[] args) throws FileNotFoundException {
-        DocxReader reader = new DocxReader();
-        reader.readDocxFile();
+    public static void main(String[] args) throws IOException {
+       FileWriter writer = new FileWriter();
+       writer.generateNewDocxFile();
+
     }
 }
