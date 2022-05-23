@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Main {
 
@@ -14,9 +15,11 @@ public class Main {
     bst.insert(82);
     bst.insert(27);
 
-        System.out.println(bst.inOrderTraverse(bst.root, new ArrayList<>()));
-        System.out.println(bst.preOrderTraverse(bst.root, new ArrayList<>()));
-        System.out.println(bst.postOrderTraverse(bst.root, new ArrayList<>()));
+       Iterator<Integer> bstIterator = bst.iterator();
+
+       while (bstIterator.hasNext()){
+           System.out.println(bstIterator.next());
+       }
 
 
     }
