@@ -294,23 +294,26 @@ class Tree {
         String inf;
         int k;
 
-        inf = "Ale";
-        k = 5;
-        //st.insertLeafInTree(inf, k);
-
-
-        inf = "Mas";
-        k = 1;
-        st.insertLeafInTree(inf, k);
-
-        inf = "Ale";
-        k = 7;
-        st.insertLeafInTree(inf, k);
-
-        inf = "Tur";
-        k = 6;
-        st.insertLeafInTree(inf, k);
+//        inf = "Ale";
+//        k = 5;
+//        //st.insertLeafInTree(inf, k);
+//
+//
+//        inf = "Mas";
+//        k = 1;
+//        st.insertLeafInTree(inf, k);
+//
+//        inf = "Ale";
+//        k = 7;
+//        st.insertLeafInTree(inf, k);
+//
+//        inf = "Tur";
+//        k = 6;
+//        st.insertLeafInTree(inf, k);
         //st.deleteFromTree(1);
+        st.insertLeafInTree("aaa",1);
+        st.insertLeafInTree("bbb",2);
+        st.insertLeafInTree("ccc",3);
 
         Iterator<String> treeIterator = st.iterator();
         while (treeIterator.hasNext()) {

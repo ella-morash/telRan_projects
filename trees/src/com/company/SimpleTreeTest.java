@@ -19,6 +19,23 @@ class SimpleTreeTest {
     }
 
     @Test
+    void checkHasNextOneElement(){
+        tree.insertLeafInTree("aaa",1);
+        iterator=tree.iterator();
+
+        Assertions.assertTrue(iterator.hasNext());
+
+    }
+    @Test
+    void checkHasNextOneElementWithCallingNextMethod(){
+        tree.insertLeafInTree("aaa",1);
+        iterator=tree.iterator();
+        iterator.next();
+        Assertions.assertFalse(iterator.hasNext());
+
+    }
+
+    @Test
     void testIteratorIfTreeIsNotEmptyOneElement(){
         tree.insertLeafInTree("aaa",1);
         iterator=tree.iterator();
@@ -29,11 +46,11 @@ class SimpleTreeTest {
     @Test
     void testIteratorIfTreeIsNotEmptyFewElements(){
         tree.insertLeafInTree("aaa",1);
-        tree.insertLeafInTree("bbb",1);
-        tree.insertLeafInTree("ccc",1);
+        tree.insertLeafInTree("bbb",2);
+        tree.insertLeafInTree("ccc",3);
         iterator=tree.iterator();
         iterator.next();
-        String expected = "aaa";
+        String expected = "bbb";
         Assertions.assertEquals(expected,iterator.next());
 
     }

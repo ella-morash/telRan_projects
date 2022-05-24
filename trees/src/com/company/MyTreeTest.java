@@ -32,7 +32,7 @@ class MyTreeTest {
 
     }
     @Test
-    void checkHasNextOneElementWithNextMethod(){
+    void checkHasNextOneElementWithCallingNextMethod(){
         tree.insert(1);
         iterator=tree.iterator();
         iterator.next();
