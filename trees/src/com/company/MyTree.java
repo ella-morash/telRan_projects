@@ -34,6 +34,19 @@ public class MyTree implements Iterable<Integer> {
 
             return current;
         }
+        private List<Integer> inOrderTraverse(Node currentNode, List<Integer> array) {
+            if (currentNode==null) return new ArrayList<>();
+
+            if (currentNode.left != null) {
+                inOrderTraverse(currentNode.left, array);
+            }
+            array.add(currentNode.value);
+            if (currentNode.right != null) {
+                inOrderTraverse(currentNode.right, array);
+            }
+            return array;
+        }
+
 
     }
 
@@ -123,18 +136,6 @@ public class MyTree implements Iterable<Integer> {
             return closest;
         }
 
-        public List<Integer> inOrderTraverse(Node currentNode, List<Integer> array) {
-        if (currentNode==null) return new ArrayList<>();
-
-            if (currentNode.left != null) {
-                inOrderTraverse(currentNode.left, array);
-            }
-            array.add(currentNode.value);
-            if (currentNode.right != null) {
-                inOrderTraverse(currentNode.right, array);
-            }
-            return array;
-        }
 
         public List<Integer> preOrderTraverse(Node currentNode, List<Integer> array) {
 
