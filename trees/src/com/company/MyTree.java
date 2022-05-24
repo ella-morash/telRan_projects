@@ -1,34 +1,28 @@
 package com.company;
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Stack;
+import java.util.*;
 
 public class MyTree implements Iterable<Integer> {
     Node root;
 
     @Override
     public Iterator<Integer> iterator() {
+
         return new MyTreeInOrderIterator();
     }
 
     class MyTreeInOrderIterator implements Iterator<Integer> {
         private Node current;
-        private Stack<Node> path;
+        private List<Integer> listOfTree;
+        private int index = 0;
 
         public MyTreeInOrderIterator() {
-            current=root;
-            path=new Stack<>();
-            while (current!=null) {
-                path.push(current);
-                current=current.left;
-            }
+            this.listOfTree = inOrderTraverse(root,new ArrayList<>());
         }
 
         @Override
         public boolean hasNext() {
-            return !path.isEmpty();
+            return index<listOfTree.size();
         }
 
         @Override
@@ -36,21 +30,14 @@ public class MyTree implements Iterable<Integer> {
 
             if (!hasNext()) throw new NoSuchElementException();
 
-            current = path.pop();
+            int current = listOfTree.get(index++);
 
-            while (current != null) {
-                if (current != null) {
-                    path.push(current);
-                    current = current.left;
-                }
-            }
-            return current.value;
+            return current;
         }
 
     }
 
-
-        class Node {
+    class Node {
             int value;
             Node left;
             Node right;
@@ -137,6 +124,7 @@ public class MyTree implements Iterable<Integer> {
         }
 
         public List<Integer> inOrderTraverse(Node currentNode, List<Integer> array) {
+        if (currentNode==null) return new ArrayList<>();
 
             if (currentNode.left != null) {
                 inOrderTraverse(currentNode.left, array);
