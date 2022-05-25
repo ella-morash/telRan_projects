@@ -1,4 +1,4 @@
-import org.apache.poi.xwpf.usermodel.XWPFDocument;
+package process;
 
 import java.io.FileNotFoundException;
 import java.util.Map;
@@ -6,8 +6,8 @@ import java.util.Map;
 public class ReplacingFactory {
 
     public static void replacePlaceholders(PlaceHolderReplacer placeHolderReplacer,
-                                                   DocxReader docxReader,
-                                                   Map<String, String> map) throws FileNotFoundException {
+                                           DocxReader docxReader,
+                                           Map<String, String> map) throws FileNotFoundException {
         placeHolderReplacer.replacePlaceholders(map,docxReader);
 
     }

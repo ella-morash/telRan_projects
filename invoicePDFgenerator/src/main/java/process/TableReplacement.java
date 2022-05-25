@@ -1,13 +1,15 @@
+package process;
+
+
 import org.apache.poi.xwpf.usermodel.*;
 
-import java.io.FileNotFoundException;
 import java.util.Map;
 
-public class TableReplacement implements PlaceHolderReplacer{
-    POJO pojo;
+public class TableReplacement implements PlaceHolderReplacer {
+
 
     @Override
-    public void replacePlaceholders(Map<String, String> map, DocxReader docxReader) throws FileNotFoundException {
+    public void replacePlaceholders(Map<String, String> map, DocxReader docxReader) {
         outerForLoop:
         for (Map.Entry<String, String> entry : map.entrySet())
         {

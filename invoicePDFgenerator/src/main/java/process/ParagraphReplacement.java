@@ -1,14 +1,15 @@
+package process;
+
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
 
-import java.io.FileNotFoundException;
 import java.util.Map;
 
-public class ParagraphReplacement implements PlaceHolderReplacer{
-    POJO pojo;
+public class ParagraphReplacement implements PlaceHolderReplacer {
+
 
     @Override
-    public void replacePlaceholders(Map<String, String> map, DocxReader docxReader) throws FileNotFoundException {
+    public void replacePlaceholders(Map<String, String> map, DocxReader docxReader) {
         outerForLoop:
         for (Map.Entry<String, String> entry : map.entrySet())
         {
