@@ -35,7 +35,7 @@ public class MyTree implements Iterable<Integer> {
             return current;
         }
         private List<Integer> inOrderTraverse(Node currentNode, List<Integer> array) {
-            if (currentNode==null) return new ArrayList<>();
+            if (root==null) return new ArrayList<>();
 
             if (currentNode.left != null) {
                 inOrderTraverse(currentNode.left, array);
