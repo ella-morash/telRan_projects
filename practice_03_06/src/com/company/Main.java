@@ -6,9 +6,9 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            validate(19);
+            validate(17);
         } catch (InvalidAgeException e) {
-            System.out.println("age is invalid");
+            System.out.println(e.getMessage());
 
         }
     }
