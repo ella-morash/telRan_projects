@@ -27,4 +27,14 @@ class MainTest {
 
     }
 
+    @Test
+    void testAnagram(){
+        List<String> names = Arrays.asList("ivan","airam","vani","vian","maria","kolya");
+        String name = "ivan";
+        List<String> expected = Arrays.asList("ivan","vani","vian");
+
+        Assertions.assertEquals(expected,Main.anagramList(name,names));
+
+    }
+
 }

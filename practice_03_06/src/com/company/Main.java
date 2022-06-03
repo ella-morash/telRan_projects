@@ -63,4 +63,36 @@ public class Main {
 
       return -1;
     }
+
+    //3. Написать метод, который принимает список имен и их анаграмм и имя по
+    // которому он выдает список всех его анаграмм, включая само имя
+    //  public List<String>anagramList(String str, List<String>strings)
+    //{"ivan","airam","vani","vian","maria","kolya"}, ivan -> {ivan,vani,vian}
+
+    public static List<String> anagramList(String str, List<String>strings) {
+        List<String> listOfAnargrams = new ArrayList<>();
+        for (String name: strings) {
+            if (name.equals(str)) {
+                listOfAnargrams.add(name);
+            }
+            if (isAnagram(str,name) && !name.equals(str)) {
+                listOfAnargrams.add(name);
+            }
+
+        }
+        return listOfAnargrams;
+
+    }
+
+    static boolean  isAnagram(String string1, String string2) {
+        if (string1.length() != string2.length()) {
+            return false;
+        }
+        char[] a1 = string1.toCharArray();
+        char[] a2 = string2.toCharArray();
+        Arrays.sort(a1);
+        Arrays.sort(a2);
+        return Arrays.equals(a1, a2);
+    }
+
 }
