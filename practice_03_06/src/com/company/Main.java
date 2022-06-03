@@ -5,9 +5,25 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        List<Integer> numbers = Arrays.asList(1, 5, -10, 5, 1);
-        System.out.println(findMaxOccuredElt(numbers));
-        System.out.println(findSingleNumber(numbers));
+        try {
+            validate(19);
+        } catch (InvalidAgeException e) {
+            System.out.println("age is invalid");
+
+        }
+    }
+
+    //4. Написать метод "validate"  который принимает возраст человека и бросает "InvalidAgeException"
+    // если возраст меньше 18 а в противном случае выводит на экран надпись "welcome to vote"
+
+
+    public static void validate(int age) throws InvalidAgeException {
+        if (age < 18) {
+            throw new InvalidAgeException("Age is less then 18");
+        }
+
+        System.out.println("hey you");;
+
     }
 
     //написать метод, возвращающий элемент из списка, встречающийся наибольшее количество раз
@@ -70,17 +86,20 @@ public class Main {
     //{"ivan","airam","vani","vian","maria","kolya"}, ivan -> {ivan,vani,vian}
 
     public static List<String> anagramList(String str, List<String>strings) {
-        List<String> listOfAnargrams = new ArrayList<>();
+
+        Map<String,List<String>> map = new HashMap<>();
         for (String name: strings) {
             if (name.equals(str)) {
-                listOfAnargrams.add(name);
+                map.put(name,new ArrayList<>());
+                map.get(str).add(name);
             }
             if (isAnagram(str,name) && !name.equals(str)) {
-                listOfAnargrams.add(name);
+                map.get(str).add(name);
             }
 
+
         }
-        return listOfAnargrams;
+        return map.get(str);
 
     }
 
