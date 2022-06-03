@@ -46,11 +46,20 @@ public class Main {
 
 
         }
+        boolean found = false;
+        int single = 0;
         for (Map.Entry entrySet: map.entrySet()) {
             if (entrySet.getValue().equals(1)){
-                return (int) entrySet.getKey();
+                found = true;
+                single = (int) entrySet.getKey();
+                break;
+            } else {
+                found = true;
+                single = (int) entrySet.getKey();
             }
+
         }
+        if (found) return single;
 
       return -1;
     }

@@ -20,5 +20,11 @@ class MainTest {
         Assertions.assertEquals(-10,Main.findSingleNumber(numbers));
 
     }
+    @Test
+    void testSingleElMoreThenTwo(){
+        List<Integer> numbers = Arrays.asList(1,1,1);
+        Assertions.assertEquals(1,Main.findSingleNumber(numbers));
+
+    }
 
 }
