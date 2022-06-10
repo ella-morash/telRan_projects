@@ -4,10 +4,7 @@ package com.company;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.TreeMap;
-import java.util.TreeSet;
+import java.util.*;
 
 class MainTest {
 
@@ -36,6 +33,21 @@ class MainTest {
         treeMap.get("Volvo").add(car1);
 
         Assertions.assertEquals(treeMap,Main.getTreeMapOfCars(cars));
+
+    }
+    @Test
+    void testWordsAndChars() {
+        //{hello,world,hell}-> {h:[hell,hello], w:[world]}
+        List<String> words = Arrays.asList("hello","word","hell");
+        Map<Character,List<String>> treeMap = new TreeMap<>();
+        treeMap.put('h',new ArrayList<>());
+        treeMap.get('h').add("hello");
+        treeMap.get('h').add("hell");
+        treeMap.put('w',new ArrayList<>());
+        treeMap.get('w').add("word");
+
+        Assertions.assertEquals(treeMap,Main.getTreeMapOfWords(words));
+
 
     }
 
