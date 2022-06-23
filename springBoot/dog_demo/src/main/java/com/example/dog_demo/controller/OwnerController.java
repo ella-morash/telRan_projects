@@ -26,9 +26,8 @@ public class OwnerController {
     }
 
     @PutMapping("/owners/{id}/dogs/{dog_id}")
-    public void addDogToOwner(@PathVariable("id") Long id, @PathVariable("dog_id") Long dogId,
-                       @RequestBody DogDTO request) {
-        ownerService.addDog(id,dogId,request);
+    public void addDogToOwner(@PathVariable("id") Long id, @PathVariable("dog_id") Long dogId) {
+        ownerService.addDog(id,dogId);
     }
 
 

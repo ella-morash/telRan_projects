@@ -10,5 +10,5 @@ public interface OwnerService {
 
     OwnerDTO getOwnerById(Long id);
 
-    void addDog(Long id, Long dogId, DogDTO request);
+    void addDog(Long id, Long dogId);
 }
